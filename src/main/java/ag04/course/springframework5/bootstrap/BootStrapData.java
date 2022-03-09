@@ -6,7 +6,6 @@ import ag04.course.springframework5.domain.Publisher;
 import ag04.course.springframework5.repositories.AuthorRepository;
 import ag04.course.springframework5.repositories.BookRepository;
 import ag04.course.springframework5.repositories.PublisherRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
@@ -17,7 +16,6 @@ public class BootStrapData implements CommandLineRunner {
     private final BookRepository bookRepository;
     private final PublisherRepository publisherRepository;
 
-    @Autowired
     public BootStrapData(AuthorRepository authorRepository, BookRepository bookRepository, PublisherRepository publisherRepository) {
         this.authorRepository = authorRepository;
         this.bookRepository = bookRepository;
@@ -48,12 +46,8 @@ public class BootStrapData implements CommandLineRunner {
         System.out.println("Number of Books: " + bookRepository.count());
 
         Publisher somePublisher = new Publisher("somePublisher", "Some Road 11", "Sim City", "1");
-        somePublisher.getBooks().add(domainDrivenDesign);
-        somePublisher.getBooks().add(noEJB);
-
         publisherRepository.save(somePublisher);
-        System.out.println("Number of Publishers: " + publisherRepository.count());
 
-        System.out.println(somePublisher.getName() + " has published " + somePublisher.getBooks().size() + " books.");
+        System.out.println("Number of Publishers: " + publisherRepository.count());
     }
 }
