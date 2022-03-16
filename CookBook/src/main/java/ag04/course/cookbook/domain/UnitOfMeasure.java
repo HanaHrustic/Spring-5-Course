@@ -11,6 +11,7 @@ public class UnitOfMeasure {
 
     private String uom;
 
+
     public Long getId() {
         return id;
     }
