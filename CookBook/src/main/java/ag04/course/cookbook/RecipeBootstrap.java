@@ -4,6 +4,7 @@ import ag04.course.cookbook.domain.*;
 import ag04.course.cookbook.services.CategoryService;
 import ag04.course.cookbook.services.RecipeService;
 import ag04.course.cookbook.services.UnitOfMeasureService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationListener;
 import org.springframework.context.event.ContextRefreshedEvent;
@@ -13,6 +14,7 @@ import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
+@Slf4j
 @Component
 public class RecipeBootstrap implements ApplicationListener<ContextRefreshedEvent> {
 
@@ -30,6 +32,7 @@ public class RecipeBootstrap implements ApplicationListener<ContextRefreshedEven
     @Override
     public void onApplicationEvent(ContextRefreshedEvent event) {
         recipeService.saveAll(getRecipes());
+        log.debug("Loading Bootstrap data.");
     }
 
     private List<Recipe> getRecipes(){
