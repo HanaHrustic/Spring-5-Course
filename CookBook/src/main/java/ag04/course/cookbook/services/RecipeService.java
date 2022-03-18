@@ -9,5 +9,4 @@ import java.util.Set;
 public interface RecipeService {
     Set<Recipe> getRecipes();
     void saveAll(List<Recipe> recipes);
-    Recipe findById(Long l);
 }
