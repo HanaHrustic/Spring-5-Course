@@ -9,5 +9,4 @@ class CookBookApplicationTests {
     @Test
     void contextLoads() {
     }
-
 }
