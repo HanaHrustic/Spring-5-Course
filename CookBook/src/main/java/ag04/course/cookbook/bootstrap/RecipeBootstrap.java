@@ -1,4 +1,4 @@
-package ag04.course.cookbook;
+package ag04.course.cookbook.bootstrap;
 
 import ag04.course.cookbook.domain.*;
 import ag04.course.cookbook.services.CategoryService;

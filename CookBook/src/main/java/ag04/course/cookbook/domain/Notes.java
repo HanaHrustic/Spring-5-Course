@@ -1,10 +1,13 @@
 package ag04.course.cookbook.domain;
 
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 import javax.persistence.*;
 
-@Data
+@Getter
+@Setter
 @Entity
 public class Notes {
 
