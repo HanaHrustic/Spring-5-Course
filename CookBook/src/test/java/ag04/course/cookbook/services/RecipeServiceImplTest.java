@@ -4,6 +4,7 @@ import ag04.course.cookbook.commands.RecipeCommand;
 import ag04.course.cookbook.converters.RecipeCommandToRecipe;
 import ag04.course.cookbook.converters.RecipeToRecipeCommand;
 import ag04.course.cookbook.domain.Recipe;
+import ag04.course.cookbook.exceptions.NotFoundException;
 import ag04.course.cookbook.repositories.RecipeRepository;
 import org.junit.Before;
 import org.junit.Test;
@@ -35,6 +36,18 @@ public class RecipeServiceImplTest {
         MockitoAnnotations.initMocks(this);
 
         recipeService = new RecipeServiceImpl(recipeRepository, recipeCommandToRecipe, recipeToRecipeCommand);
+    }
+
+    @Test(expected = NotFoundException.class)
+    public void getRecipeByIdTestNotFound() throws Exception {
+
+        Optional<Recipe> recipeOptional = Optional.empty();
+
+        when(recipeRepository.findById(anyLong())).thenReturn(recipeOptional);
+
+        Recipe recipeReturned = recipeService.findById(1L);
+
+        //should go boom
     }
 
     @Test

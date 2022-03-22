@@ -4,6 +4,7 @@ import ag04.course.cookbook.commands.RecipeCommand;
 import ag04.course.cookbook.converters.RecipeCommandToRecipe;
 import ag04.course.cookbook.converters.RecipeToRecipeCommand;
 import ag04.course.cookbook.domain.Recipe;
+import ag04.course.cookbook.exceptions.NotFoundException;
 import ag04.course.cookbook.repositories.RecipeRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -40,7 +41,7 @@ public class RecipeServiceImpl implements RecipeService {
         Optional<Recipe> recipeOptional = recipeRepository.findById(l);
 
         if (!recipeOptional.isPresent()) {
-            throw new RuntimeException("Recipe Not Found!");
+            throw new NotFoundException("Recipe Not Found! For ID value: " + l.toString());
         }
 
         return recipeOptional.get();
