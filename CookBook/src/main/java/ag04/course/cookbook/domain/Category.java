@@ -1,22 +1,20 @@
 package ag04.course.cookbook.domain;
 
 import lombok.*;
+import org.springframework.data.mongodb.core.mapping.DBRef;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 import javax.persistence.*;
 import java.util.Set;
 
 @Getter
 @Setter
-@Entity
+@Document
 public class Category {
-
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-
+    private String id;
     private String description;
 
-    @ManyToMany(mappedBy = "categories")
+    @DBRef
     private Set<Recipe> recipes;
-
 }

@@ -5,6 +5,7 @@ import ag04.course.cookbook.converters.UnitOfMeasureToUnitOfMeasureCommand;
 import ag04.course.cookbook.domain.UnitOfMeasure;
 import ag04.course.cookbook.repositories.UnitOfMeasureRepository;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
@@ -26,7 +27,7 @@ public class UnitOfMeasureServiceImplTest {
 
     @Before
     public void setUp() throws Exception {
-        MockitoAnnotations.initMocks(this);
+        MockitoAnnotations.openMocks(this);
 
         service = new UnitOfMeasureServiceImpl(unitOfMeasureRepository, unitOfMeasureToUnitOfMeasureCommand);
     }
@@ -36,11 +37,11 @@ public class UnitOfMeasureServiceImplTest {
         //given
         Set<UnitOfMeasure> unitOfMeasures = new HashSet<>();
         UnitOfMeasure uom1 = new UnitOfMeasure();
-        uom1.setId(1L);
+        uom1.setId("1");
         unitOfMeasures.add(uom1);
 
         UnitOfMeasure uom2 = new UnitOfMeasure();
-        uom2.setId(2L);
+        uom2.setId("2");
         unitOfMeasures.add(uom2);
 
         when(unitOfMeasureRepository.findAll()).thenReturn(unitOfMeasures);

@@ -1,6 +1,7 @@
 package ag04.course.cookbook.domain;
 
 import org.junit.Before;
+import org.junit.Test;
 
 import static org.junit.Assert.*;
 
@@ -13,19 +14,19 @@ public class CategoryTest {
         category = new Category();
     }
 
-    @org.junit.Test
+    @Test
     public void getId() {
-        Long idValue = 4l;
+        String idValue = "4";
 
         category.setId(idValue);
         assertEquals(idValue, category.getId());
     }
 
-    @org.junit.Test
+    @Test
     public void getDescription() {
     }
 
-    @org.junit.Test
+    @Test
     public void getRecipes() {
     }
 }
