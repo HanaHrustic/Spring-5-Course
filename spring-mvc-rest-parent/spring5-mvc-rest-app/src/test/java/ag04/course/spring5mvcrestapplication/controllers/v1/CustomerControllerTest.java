@@ -1,9 +1,10 @@
 package ag04.course.spring5mvcrestapplication.controllers.v1;
 
-import ag04.course.spring5mvcrestapplication.api.v1.model.CustomerDTO;
-import ag04.course.spring5mvcrestapplication.controllers.RestResponseEntityExceptionHandler;
-import ag04.course.spring5mvcrestapplication.services.CustomerService;
-import ag04.course.spring5mvcrestapplication.services.ResourceNotFoundException;
+import ag04.springframework.controllers.RestResponseEntityExceptionHandler;
+import ag04.springframework.controllers.v1.CustomerController;
+import ag04.springframework.model.CustomerDTO;
+import ag04.springframework.services.CustomerService;
+import ag04.springframework.services.ResourceNotFoundException;
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.InjectMocks;

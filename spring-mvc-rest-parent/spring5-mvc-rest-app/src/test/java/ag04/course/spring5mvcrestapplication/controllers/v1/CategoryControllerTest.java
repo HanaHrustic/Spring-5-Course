@@ -1,9 +1,10 @@
 package ag04.course.spring5mvcrestapplication.controllers.v1;
 
-import ag04.course.spring5mvcrestapplication.api.v1.model.CategoryDTO;
-import ag04.course.spring5mvcrestapplication.controllers.RestResponseEntityExceptionHandler;
-import ag04.course.spring5mvcrestapplication.services.CategoryService;
-import ag04.course.spring5mvcrestapplication.services.ResourceNotFoundException;
+import ag04.springframework.api.v1.model.CategoryDTO;
+import ag04.springframework.controllers.RestResponseEntityExceptionHandler;
+import ag04.springframework.controllers.v1.CategoryController;
+import ag04.springframework.services.CategoryService;
+import ag04.springframework.services.ResourceNotFoundException;
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.InjectMocks;
